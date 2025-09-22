@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
 
   <title>Frontend Mentor | Weather app</title>
-  <link rel="stylesheet" href="/style.css">
-  <script src="/script.js" defer></script>
+  <!-- FIXED: removed leading slash -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 
 </head>
 
@@ -19,8 +19,8 @@
 
   <header class="header wrapper">
     <div class="header__content">
-      <a class="header__homelink" href="/">
-        <img class="header__logo" src="/assets/images/download 5.svg" alt="Weather Now Home" width="197" height="40">
+      <a class="header__homelink" href="#">
+        <img class="header__logo" src="assets/images/download 5.svg" alt="Weather Now Home" width="197" height="40">
       </a>
 
       <select class="dropdown header__dropdown" name="units" id="ddlUnits">
@@ -29,7 +29,6 @@
         <option value="F">&deg;F</option>
       </select>
     </div>
-
   </header>
 
   <main id="main" class="main wrapper">
@@ -43,7 +42,6 @@
           <button id="btnSearch" class="hero__button" type="submit">Search</button>
         </div>
       </div>
-
     </section>
 
     <div class="dashboard">
@@ -56,7 +54,8 @@
             <div id="dvCurrDate" class="current__date">Tuesday, Aug 5, 2025</div>
           </div>
           <div class="current__info">
-            <img class="current__icon" src="/assets/images/icon-sunny.webp" alt="" width="320" height="320">
+            <!-- FIXED: removed leading slash -->
+            <img class="current__icon" src="assets/images/icon-sunny.webp" alt="" width="320" height="320">
             <div class="current__temp"><span id="dvCurrTemp">20</span>&deg;</div>
           </div>
         </div>
@@ -79,7 +78,6 @@
             <p id="pPrecipitation" class="current__condition-value"></p>
           </div>
         </div>
-
       </section>
 
       <section class="daily">
@@ -96,7 +94,6 @@
       </section>
 
       <section class="hourly">
-
         <div class="hourly__content">
           <div class="hourly__header">
             <h2 class="section__title hourly__title">Hourly forecast</h2>
@@ -130,16 +127,8 @@
             <div id="dvForecastHour24" class="hourly__hour"></div>
           </div>
         </div>
-
-
       </section>
     </div>
-
-
   </main>
-
-  
-
 </body>
-
 </html>
