@@ -34,11 +34,9 @@ async function getGeoData() {
   }
 }
 
-// ----------------- UPDATED FUNCTION -----------------
 function loadLocationData(locationData) {
   let location = locationData[0].address;
 
-  // ✅ City level fallback (NOT including state here)
   cityName =
     location.city ||
     location.town ||
@@ -47,26 +45,20 @@ function loadLocationData(locationData) {
     location.county ||
     location.state_district;
 
-  // ✅ State and country
   let stateName = location.state || "";
   countryName = location.country || "";
 
-  // ✅ Display logic
   let locationText = "";
   if (cityName) {
-    // Agar city/town/village mila → City, State, Country
     locationText = `${cityName}${stateName ? ", " + stateName : ""}${countryName ? ", " + countryName : ""}`;
   } else if (stateName) {
-    // Agar sirf state mila → State, Country
     locationText = `${stateName}${countryName ? ", " + countryName : ""}`;
   } else {
-    // Fallback (rare case)
     locationText = countryName;
   }
 
   dvCityCountry.textContent = locationText;
 
-  // ✅ Date as it was
   let dateOptions = {
     year: "numeric",
     month: "short",
@@ -82,7 +74,6 @@ async function getWeatherData(lat, lon) {
   let windUnit = "kmh";
   let precipUnit = "mm";
 
-  // if toggle value = F
   if (ddlUnits.value === "F") {
     tempUnit = "fahrenheit";
     windUnit = "mph";
@@ -149,7 +140,8 @@ function addDailyElement(tag, className, content, weatherCodeName, parentElement
     newElement.appendChild(newContent);
   }
   if (tag === "img") {
-    newElement.setAttribute("src", `/assets/images/icon-${weatherCodeName}.webp`);
+    // ✅ Fix here
+    newElement.setAttribute("src", `assets/images/icon-${weatherCodeName}.webp`);
     newElement.setAttribute("alt", weatherCodeName);
     newElement.setAttribute("width", "320");
     newElement.setAttribute("height", "320");
@@ -165,7 +157,8 @@ function addHourlyElement(tag, className, content, weatherCodeName, parentElemen
     newElement.appendChild(newContent);
   }
   if (tag === "img") {
-    newElement.setAttribute("src", `/assets/images/icon-${weatherCodeName}.webp`);
+    // ✅ Fix here
+    newElement.setAttribute("src", `assets/images/icon-${weatherCodeName}.webp`);
     newElement.setAttribute("alt", weatherCodeName);
     newElement.setAttribute("width", "320");
     newElement.setAttribute("height", "320");
@@ -265,5 +258,3 @@ getGeoData();
 btnSearch.addEventListener("click", getGeoData);
 ddlUnits.addEventListener("change", getGeoData);
 ddlDay.addEventListener("change", loadHourlyForecast);
-
-
