@@ -14,10 +14,7 @@ A real-time weather dashboard that displays:
 - Nominatim API
 
 ## Live Demo
-[Click here to view live demo](https://username.github.io/weather-dashboard)
-
-## Source Code
-[GitHub Repository](https://github.com/username/weather-dashboard)
+[Click here to view live demo](https://piyushatcode.github.io/Real-Time-Weather-Forecast-Dashboard/)
 
 ## Future Scope
 - Add real-time IoT sensors for water/air quality
